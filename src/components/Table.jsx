@@ -13,19 +13,19 @@ class Table extends Component {
       <>
         <ListGroup>
           <ListGroup.Item
-            onClick={(e) => this.setState({ selected: 'First' })}
+            onClick={() => this.props.changeSelected('First')}
             className={this.checkSelected('First')}
           >
             First
           </ListGroup.Item>
           <ListGroup.Item
-            onClick={(e) => this.setState({ selected: 'Second' })}
+            onClick={() => this.props.changeSelected('Second')}
             className={this.checkSelected('Second')}
           >
             Second
           </ListGroup.Item>
           <ListGroup.Item
-            onClick={(e) => this.setState({ selected: 'Third' })}
+            onClick={() => this.props.changeSelected('Third')}
             className={this.checkSelected('Third')}
           >
             Third

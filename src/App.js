@@ -17,6 +17,13 @@ class App extends Component {
     selected: undefined,
   }
 
+  changeSelected = (newValue) => {
+    // newValue can be 'First', 'Second' or 'Third'
+    this.setState({
+      selected: newValue,
+    })
+  }
+
   // we're now going to write a function here, capable of changing the state
   // of the App component. And then, we're going to pass it down to Table as a prop
 
@@ -27,10 +34,15 @@ class App extends Component {
           <Container>
             <Row>
               <Col>
-                <Table selectedValue={this.state.selected} />
+                <Table
+                  selectedValue={this.state.selected}
+                  changeSelected={this.changeSelected}
+                  // you can pass anything as a prop!
+                  // even a reference to a function
+                />
               </Col>
               <Col className="my-auto">
-                <Detail />
+                <Detail selectedValue={this.state.selected} />
               </Col>
             </Row>
           </Container>
